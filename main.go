@@ -12,9 +12,11 @@ func main() {
 	secret, _ := http.GetSecret()
 	provider := crypter.NewCrypter(*secret)
 
-	file := reader.Reader("./certificado")
-	encoded := provider.Encrypt(file)
-	fmt.Println(string(encoded))
-	decrypt := provider.Decrypt(string(encoded))
+	//file := reader.Reader("./certificado")
+	//encoded := provider.Encrypt(file)
+	//reader.Writer("./encript", encoded)
+	//decrypt := provider.Decrypt(string(encoded))
+	file2 := reader.Reader("./encript")
+	decrypt := provider.Decrypt(string(file2))
 	fmt.Println(string(decrypt))
 }
